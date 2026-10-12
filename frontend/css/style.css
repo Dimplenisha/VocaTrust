@@ -1,0 +1,3320 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --bg: #f6f7fb;
+    --sidebar: #ffffff;
+    --card: #ffffff;
+
+    --primary: #5b5ce2;
+    --primary-dark: #4647c7;
+    --primary-light: #eeefff;
+
+    --text: #171721;
+    --muted: #77788a;
+    --border: #e9e9f1;
+
+    --success: #159447;
+    --success-light: #eaf8ef;
+
+    --warning: #d58a16;
+    --warning-light: #fff5df;
+
+    --danger: #d83b52;
+    --danger-light: #fff0f2;
+
+    --shadow: 0 10px 40px rgba(30, 32, 70, 0.08);
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "DM Sans", sans-serif;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: var(--sidebar);
+
+    border-right: 1px solid var(--border);
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 28px 16px;
+
+    z-index: 100;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 12px;
+
+    margin-bottom: 55px;
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+
+.logo-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b5ce2,
+            #8b5cf6
+        );
+
+    color: white;
+
+    font-weight: 800;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(91, 92, 226, 0.25);
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.nav-item {
+
+    text-decoration: none;
+
+    color: var(--muted);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 15px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.nav-item span {
+
+    font-size: 18px;
+
+}
+
+
+.nav-item:hover {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+}
+
+
+.nav-item.active {
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.sidebar-bottom {
+
+    margin-top: auto;
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 35px 55px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 55px;
+
+}
+
+
+.welcome-text {
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.top-header h1 {
+
+    font-family: "Plus Jakarta Sans", sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+}
+
+
+.profile-avatar {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #171721;
+
+    color: white;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 55px 60px;
+
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(139, 92, 246, 0.28),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #1f2163,
+            #3739a7
+        );
+
+    color: white;
+
+    margin-bottom: 30px;
+
+}
+
+
+.hero-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 50%;
+
+    right: -70px;
+    bottom: -120px;
+
+}
+
+
+.hero-text {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 650px;
+
+}
+
+
+.ai-badge {
+
+    display: inline-flex;
+
+    padding: 8px 13px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero-text h2 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 42px;
+
+    line-height: 1.18;
+
+    letter-spacing: -1.4px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.hero-text h2 span {
+
+    color: #b9baff;
+
+}
+
+
+.hero-text p {
+
+    max-width: 580px;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   UPLOAD CARD
+========================================================= */
+
+.upload-card {
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 24px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.upload-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 50px
+        rgba(30, 32, 70, 0.1);
+
+}
+
+
+.upload-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        var(--primary-light);
+
+    font-size: 32px;
+
+}
+
+
+.upload-card h3 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.upload-card p {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.browse-btn {
+
+    border: none;
+
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    background:
+        var(--primary);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.browse-btn:hover {
+
+    background:
+        var(--primary-dark);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.file-info {
+
+    display: block;
+
+    margin-top: 18px;
+
+    color: #a1a1b2;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   ANALYZE BUTTON
+========================================================= */
+
+.analyze-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 30px;
+
+}
+
+
+.analyze-btn {
+
+    border: none;
+
+    min-width: 230px;
+
+    padding: 16px 28px;
+
+    border-radius: 14px;
+
+    background: #171721;
+
+    color: white;
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.analyze-btn span {
+
+    margin-left: 10px;
+
+    font-size: 20px;
+
+}
+
+
+.analyze-btn:hover {
+
+    background:
+        var(--primary);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(91, 92, 226, 0.25);
+
+}
+
+
+.analyze-btn:disabled {
+
+    opacity: 0.65;
+
+    cursor: wait;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   ANALYSIS RESULT
+========================================================= */
+
+.analysis-result {
+
+    margin-top: 35px;
+
+    animation:
+        resultFadeIn
+        0.45s ease;
+
+}
+
+
+@keyframes resultFadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESULT HEADER
+========================================================= */
+
+.result-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    margin-bottom: 22px;
+
+}
+
+
+.result-eyebrow {
+
+    color:
+        var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.result-header h2 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.result-subtitle {
+
+    color:
+        var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+.status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background:
+        var(--success-light);
+
+    border:
+        1px solid #ccebd6;
+
+    border-radius: 30px;
+
+    color:
+        var(--success);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        #20a052;
+
+}
+
+
+/* =========================================================
+   RESULT OVERVIEW
+========================================================= */
+
+.result-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =========================================================
+   COMMON RESULT CARDS
+========================================================= */
+
+.result-status-card,
+.score-card,
+.metric-card,
+.file-summary,
+.summary-card,
+.xai-card,
+.info-card {
+
+    background:
+        var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* =========================================================
+   PREDICTION CARD
+========================================================= */
+
+.result-status-card {
+
+    min-height: 155px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+}
+
+
+.result-icon {
+
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+}
+
+
+.success-icon {
+
+    background:
+        #e8f8ed;
+
+    color:
+        var(--success);
+
+}
+
+
+.result-status-content p,
+.metric-card p {
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-status-content h3 {
+
+    color:
+        var(--success);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-status-content span,
+.metric-card span {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   SCORE CARD
+========================================================= */
+
+.score-card {
+
+    min-height: 155px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+}
+
+
+.score-circle {
+
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+    conic-gradient(
+        #1c9b4c 0deg,
+        #1c9b4c 360deg
+    );
+
+    position: relative;
+
+}
+
+
+.score-circle::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+}
+
+
+.score-circle-inner {
+
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.score-label {
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+    margin-bottom: 2px;
+
+}
+
+
+.score-circle strong {
+
+    color:
+        var(--success);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+}
+
+
+.score-total {
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   METRIC CARDS
+========================================================= */
+
+.metric-card {
+
+    min-height: 155px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+}
+
+
+.metric-icon {
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+}
+
+
+.metric-card h3 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin-bottom: 5px;
+
+}
+
+
+.risk-card h3 {
+
+    color:
+        var(--success);
+
+    text-transform:
+        uppercase;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   FILE SUMMARY
+========================================================= */
+
+.file-summary {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 17px 22px;
+
+    margin-bottom: 18px;
+
+    border-radius: 16px;
+
+}
+
+
+.file-summary-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+}
+
+
+.summary-label {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+.file-summary-item strong {
+
+    font-size: 13px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.status-success {
+
+    color:
+        var(--success);
+
+}
+
+
+/* =========================================================
+   ANALYSIS GRID
+========================================================= */
+
+/* =========================================================
+   ANALYSIS GRID
+========================================================= */
+
+.analysis-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr
+        1.65fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+
+    /* Prevent the smaller card from stretching */
+    align-items: start;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.card-heading-icon {
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+}
+
+
+.card-heading h3 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+}
+
+
+.card-heading p {
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+========================================================= */
+
+.summary-card {
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+}
+
+
+.summary-row {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding: 13px 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 6px;
+
+    background:
+        #fafaff;
+
+}
+
+
+.summary-row span {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+}
+
+
+.summary-row strong {
+
+    font-size: 12px;
+
+    color:
+        var(--text);
+
+}
+
+
+/* =========================================================
+   XAI CARD
+========================================================= */
+
+.xai-card {
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+}
+
+
+/* =========================================================
+   SCORE-CAM VISUALIZATION
+========================================================= */
+
+.score-cam-visualization {
+
+    width: 100%;
+
+    animation:
+        resultFadeIn
+        0.4s ease;
+
+}
+
+
+.score-cam-image-container {
+
+    width: 100%;
+
+    background:
+        #f8f8fc;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 15px;
+
+    padding: 10px;
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+}
+
+
+.score-cam-image {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   XAI SECTION TITLE
+========================================================= */
+
+.xai-section-title {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color:
+        var(--text);
+
+    margin-top: 18px;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =========================================================
+   XAI STATISTICS
+========================================================= */
+
+.xai-stat-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.xai-stat-card {
+
+    padding: 13px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 12px;
+
+    background:
+        #fafaff;
+
+}
+
+
+.xai-stat-card span {
+
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    margin-bottom: 7px;
+
+}
+
+
+.xai-stat-card strong {
+
+    display: block;
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   FEATURE CONTRIBUTION
+========================================================= */
+
+/* =========================================================
+   FEATURE CONTRIBUTION — HORIZONTAL
+========================================================= */
+
+.feature-contribution-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+.feature-card {
+
+    padding: 12px 14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 10px;
+
+    background:
+        #fafaff;
+
+    min-width: 0;
+
+}
+
+
+.feature-card-top {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+}
+
+
+.feature-card-top span {
+
+    color:
+        #55566a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.feature-card-top strong {
+
+    color:
+        var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.feature-bar {
+
+    width: 100%;
+
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        #e9e9f2;
+
+}
+
+
+.feature-bar-fill {
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+.mfcc-bar {
+
+    background:
+        #3157d5;
+
+}
+
+
+.delta-bar {
+
+    background:
+        #7125c8;
+
+}
+
+
+.delta-delta-bar {
+
+    background:
+        #ff8500;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .feature-contribution-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+/* =========================================================
+   XAI PLACEHOLDER
+========================================================= */
+
+.xai-placeholder {
+
+    min-height: 225px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px dashed
+        #d9d9e8;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fafaff,
+            #f6f6ff
+        );
+
+    text-align: center;
+
+}
+
+
+.xai-placeholder-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        var(--primary-light);
+
+    color:
+        var(--primary);
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.xai-placeholder h4 {
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.xai-placeholder p {
+
+    max-width: 300px;
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   BOTTOM ANALYSIS GRID
+========================================================= */
+
+.bottom-analysis-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr;
+
+    gap: 18px;
+
+}
+
+
+.info-card {
+
+    min-height: 210px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+}
+
+
+/* =========================================================
+   IMPORTANT TIME REGIONS
+========================================================= */
+
+.important-region-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.important-region-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 6px;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    background:
+        #fafaff;
+
+    border:
+        1px solid
+        var(--border);
+
+}
+
+
+.region-label {
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.important-region-item strong {
+
+    color:
+        var(--primary);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   INTERPRETATION
+========================================================= */
+
+.interpretation-text {
+
+    color:
+        #55566a;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   REPORT CARD
+========================================================= */
+
+.report-card p {
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+}
+
+
+.report-btn {
+
+    width: 100%;
+
+    padding: 11px 15px;
+
+    border:
+        1px solid
+        var(--primary);
+
+    border-radius: 10px;
+
+    background:
+        white;
+
+    color:
+        var(--primary);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.report-btn:hover {
+
+    background:
+        var(--primary);
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   RISK STATES
+========================================================= */
+
+.status-badge.risk-suspicious {
+
+    background:
+        var(--warning-light);
+
+    border-color:
+        #f1dfb8;
+
+    color:
+        var(--warning);
+
+}
+
+
+.status-badge.risk-high {
+
+    background:
+        var(--danger-light);
+
+    border-color:
+        #f2cdd3;
+
+    color:
+        var(--danger);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1050px
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .result-overview {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-grid > .summary-card,
+    .analysis-grid > .integrity-assessment-card,
+    .analysis-grid > .xai-card {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .bottom-analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 850px
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+
+        width: 80px;
+
+        padding: 25px 10px;
+
+    }
+
+
+    .logo {
+
+        justify-content:
+            center;
+
+        padding: 0;
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .logo span,
+    .nav-item {
+
+        font-size: 0;
+
+    }
+
+
+    .nav-item {
+
+        justify-content:
+            center;
+
+        padding: 14px;
+
+    }
+
+
+    .nav-item span {
+
+        font-size: 20px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 80px;
+
+        padding: 30px;
+
+    }
+
+
+    .hero-text h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .result-overview {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .main-content {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .top-header {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .top-header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+    .hero-section {
+
+        padding:
+            40px 28px;
+
+    }
+
+
+    .hero-text h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .upload-card {
+
+        padding:
+            40px 20px;
+
+    }
+
+
+    .result-header {
+
+        flex-direction:
+            column;
+
+        gap: 15px;
+
+    }
+
+
+    .result-overview {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .file-summary {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .result-status-card {
+
+        min-height:
+            130px;
+
+    }
+
+
+    .score-card,
+    .metric-card {
+
+        min-height:
+            135px;
+
+    }
+
+
+    .xai-stat-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .score-cam-image-container {
+
+        padding: 5px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+
+        width: 64px;
+
+        padding:
+            20px 7px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+
+    }
+
+
+    .main-content {
+
+        margin-left: 64px;
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .hero-section {
+
+        padding:
+            32px 22px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .hero-text h2 {
+
+        font-size:
+            27px;
+
+    }
+
+
+    .hero-text p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .result-status-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .summary-card,
+    .xai-card,
+    .info-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .result-header h2 {
+
+        font-size:
+            23px;
+
+    }
+
+}
+/* =========================================================
+   VOICE INTEGRITY ASSESSMENT
+========================================================= */
+
+.integrity-assessment-card {
+
+    margin-top: 18px;
+
+    padding: 24px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+}
+
+
+/* Score area */
+
+.integrity-score-display {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 0 16px;
+
+}
+
+
+.integrity-score-number {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 4px;
+
+}
+
+
+.integrity-score-number strong {
+
+    color: var(--success);
+
+    font-family:
+        "Plus Jakarta Sans",
+        sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+}
+
+
+.integrity-score-number span {
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+}
+
+
+.integrity-score-label {
+
+    margin-top: 8px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: var(--success-light);
+
+    color: var(--success);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* Progress bar */
+
+.integrity-progress {
+
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e9e9f2;
+
+}
+
+
+.integrity-progress-fill {
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #159447,
+            #36b968
+        );
+
+    transition:
+        width 0.8s ease;
+
+}
+
+
+/* Description */
+
+.integrity-description {
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   INTEGRITY STATES
+========================================================= */
+
+.integrity-assessment-card.suspicious
+.integrity-score-number strong {
+
+    color: var(--warning);
+
+}
+
+
+.integrity-assessment-card.suspicious
+.integrity-score-label {
+
+    background: var(--warning-light);
+
+    color: var(--warning);
+
+}
+
+
+.integrity-assessment-card.suspicious
+.integrity-progress-fill {
+
+    background: var(--warning);
+
+}
+
+
+.integrity-assessment-card.fake
+.integrity-score-number strong {
+
+    color: var(--danger);
+
+}
+
+
+.integrity-assessment-card.fake
+.integrity-score-label {
+
+    background: var(--danger-light);
+
+    color: var(--danger);
+
+}
+
+
+.integrity-assessment-card.fake
+.integrity-progress-fill {
+
+    background: var(--danger);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .integrity-assessment-card {
+
+        padding: 20px;
+
+    }
+
+
+    .integrity-score-number strong {
+
+        font-size: 36px;
+
+    }
+
+}
+/* =========================================================
+   ANALYSIS GRID — LEFT STACK + RIGHT SCORE-CAM
+========================================================= */
+
+.analysis-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.85fr
+        1.65fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+
+    align-items: start;
+}
+
+
+/* Voice Analysis Summary */
+
+.analysis-grid > .summary-card {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Voice Integrity Assessment */
+
+.analysis-grid > .integrity-assessment-card {
+    grid-column: 1;
+    grid-row: 2;
+
+    margin-top: 0;
+}
+
+
+/* Score-CAM */
+
+.analysis-grid > .xai-card {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+/* ============================================================
+   PREDICTION ICON STATES
+   ============================================================ */
+
+.warning-icon {
+    background: #fff4d6;
+    color: #b7791f;
+}
+
+.danger-icon {
+    background: #ffe5e5;
+    color: #d64545;
+}
+/* ============================================================
+   DYNAMIC RESULT COLOR THEMES
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   FAKE — RED THEME
+   ------------------------------------------------------------ */
+
+.result-overview.fake-result .result-status-card,
+.result-overview.fake-result .score-card,
+.result-overview.fake-result .metric-card {
+
+    border-color: #ffd1d1;
+
+}
+
+
+.result-overview.fake-result .result-status-content h3,
+.result-overview.fake-result .score-circle strong,
+.result-overview.fake-result .risk-card h3 {
+
+    color: #d62828;
+
+}
+
+
+
+
+
+.result-overview.fake-result .metric-icon {
+
+    background: #fff0f0;
+    color: #d62828;
+
+}
+
+
+.result-overview.fake-result .risk-card {
+
+    background: #fffafa;
+
+}
+
+
+/* ------------------------------------------------------------
+   REAL — GREEN THEME
+   ------------------------------------------------------------ */
+
+.result-overview.real-result .result-status-card,
+.result-overview.real-result .score-card,
+.result-overview.real-result .metric-card {
+
+    border-color: #c8ead5;
+
+}
+
+
+.result-overview.real-result .result-status-content h3,
+.result-overview.real-result .score-circle strong,
+.result-overview.real-result .risk-card h3 {
+
+    color: #159447;
+
+}
+
+
+.result-overview.real-result .score-circle {
+
+    border-color: #159447;
+
+}
+
+
+.result-overview.real-result .metric-icon {
+
+    background: #eaf8ef;
+    color: #159447;
+
+}
+
+
+.result-overview.real-result .risk-card {
+
+    background: #f8fdf9;
+
+}
+
+
+/* ------------------------------------------------------------
+   SUSPICIOUS — ORANGE THEME
+   ------------------------------------------------------------ */
+
+.result-overview.suspicious-result .result-status-card,
+.result-overview.suspicious-result .score-card,
+.result-overview.suspicious-result .metric-card {
+
+    border-color: #f3d59b;
+
+}
+
+
+.result-overview.suspicious-result .result-status-content h3,
+.result-overview.suspicious-result .score-circle strong,
+.result-overview.suspicious-result .risk-card h3 {
+
+    color: #c47b00;
+
+}
+
+
+.result-overview.suspicious-result .score-circle {
+
+    border-color: #c47b00;
+
+}
+
+
+.result-overview.suspicious-result .metric-icon {
+
+    background: #fff6df;
+    color: #c47b00;
+
+}
+/* ============================================================
+   VOICE INTEGRITY CIRCLE — DYNAMIC COLOR
+   ============================================================ */
+
+
+/* FAKE → RED */
+
+.result-overview.fake-result .score-circle {
+    border: 8px solid #d62828 !important;
+}
+
+.result-overview.fake-result .score-circle strong {
+    color: #d62828 !important;
+}
+
+
+/* REAL → GREEN */
+
+.result-overview.real-result .score-circle {
+    border: 8px solid #159447 !important;
+}
+
+.result-overview.real-result .score-circle strong {
+    color: #159447 !important;
+}
+
+
+/* SUSPICIOUS → ORANGE */
+
+.result-overview.suspicious-result .score-circle {
+    border: 8px solid #c47b00 !important;
+}
+
+.result-overview.suspicious-result .score-circle strong {
+    color: #c47b00 !important;
+}
+/* ============================================================
+   VOICE INTEGRITY CIRCLE - DYNAMIC COLORS
+   ============================================================ */
+
+/* FAKE = RED */
+
+.result-overview.fake-result .score-circle {
+    background:
+        conic-gradient(
+            #d62828 0deg,
+            #d62828 360deg
+        );
+}
+
+.result-overview.fake-result .score-circle strong {
+    color: #d62828;
+}
+
+
+/* REAL = GREEN */
+
+.result-overview.real-result .score-circle {
+    background:
+        conic-gradient(
+            #159447 0deg,
+            #159447 360deg
+        );
+}
+
+.result-overview.real-result .score-circle strong {
+    color: #159447;
+}
+
+
+/* SUSPICIOUS = ORANGE */
+
+.result-overview.suspicious-result .score-circle {
+    background:
+        conic-gradient(
+            #c47b00 0deg,
+            #c47b00 360deg
+        );
+}
+
+.result-overview.suspicious-result .score-circle strong {
+    color: #c47b00;
+}
+/* Reduce Voice Integrity circle thickness */
+
+.result-overview.fake-result .score-circle {
+    border-width: 5px;
+}
+
+.result-overview.real-result .score-circle {
+    border-width: 5px;
+}
+
+.result-overview.suspicious-result .score-circle {
+    border-width: 5px;
+}
+/* Reduce Voice Integrity circle border thickness */
+
+.score-circle {
+    border-width: 4px;
+}
+/* ============================================================
+   VOICE INTEGRITY CIRCLE — THINNER DYNAMIC BORDER
+   ============================================================ */
+
+.result-overview.fake-result .score-circle {
+    border: 3.5px solid #d62828 !important;
+}
+
+.result-overview.real-result .score-circle {
+    border: 3.5px solid #159447 !important;
+}
+
+.result-overview.suspicious-result .score-circle {
+    border: 3.5px solid #c47b00 !important;
+}
+/* ============================================================
+   TOP RISK BADGE — DYNAMIC COLORS
+   ============================================================ */
+
+
+/* FAKE → RED */
+
+.status-badge.risk-fake {
+    background: #fff0f0;
+    border-color: #f5b5b5;
+    color: #d62828;
+}
+
+.status-badge.risk-fake .status-dot {
+    background: #d62828;
+}
+
+
+/* REAL → GREEN */
+
+.status-badge.risk-real {
+    background: #eaf8ef;
+    border-color: #bfe5cc;
+    color: #159447;
+}
+
+.status-badge.risk-real .status-dot {
+    background: #159447;
+}
+
+
+/* SUSPICIOUS → ORANGE */
+
+.status-badge.risk-suspicious {
+    background: #fff6df;
+    border-color: #f1d18c;
+    color: #c47b00;
+}
+
+.status-badge.risk-suspicious .status-dot {
+    background: #c47b00;
+}
+/* ============================================================
+   FULL REPORT MODAL
+============================================================ */
+
+.report-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+.report-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 25, 45, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+.report-modal-content {
+    position: relative;
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(20, 30, 60, 0.20);
+    padding: 30px;
+}
+
+
+/* ============================================================
+   REPORT HEADER
+============================================================ */
+
+.report-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eceef6;
+}
+
+.report-modal-header h2 {
+    margin: 5px 0 6px;
+    font-size: 26px;
+    color: #18203a;
+}
+
+.report-modal-header .result-subtitle {
+    margin: 0;
+}
+
+
+/* Close button */
+
+.report-close-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: #f3f4fb;
+    color: #555d78;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.report-close-button:hover {
+    background: #e9eafd;
+    color: #3f51d7;
+}
+
+
+/* ============================================================
+   REPORT OVERVIEW
+============================================================ */
+
+.report-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.report-summary-item {
+    padding: 16px;
+    border: 1px solid #e7e9f3;
+    border-radius: 14px;
+    background: #fafaff;
+}
+
+.report-summary-item span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: #7b829c;
+}
+
+.report-summary-item strong {
+    display: block;
+    font-size: 16px;
+    color: #4d5bd5;
+    word-break: break-word;
+}
+
+
+/* ============================================================
+   REPORT SECTIONS
+============================================================ */
+
+.report-section {
+    margin-top: 24px;
+    padding: 22px;
+    border: 1px solid #e7e9f3;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.report-section h3 {
+    margin: 0 0 18px;
+    font-size: 17px;
+    color: #18203a;
+}
+
+
+/* ============================================================
+   REPORT ANALYSIS GRID
+============================================================ */
+
+.report-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.report-analysis-grid > div {
+    padding: 14px;
+    border-radius: 12px;
+    background: #f8f9fe;
+}
+
+.report-analysis-grid span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: #7b829c;
+}
+
+.report-analysis-grid strong {
+    display: block;
+    font-size: 15px;
+    color: #4d5bd5;
+}
+
+
+/* ============================================================
+   REPORT SCORE-CAM
+============================================================ */
+
+.report-scorecam {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    background: #f7f8fd;
+    text-align: center;
+}
+
+.report-scorecam img {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+/* ============================================================
+   REPORT XAI STATISTICS
+============================================================ */
+
+.report-xai-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.report-xai-stats > div {
+    padding: 14px;
+    border-radius: 12px;
+    background: #f8f9fe;
+}
+
+.report-xai-stats span {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 12px;
+    color: #7b829c;
+}
+
+.report-xai-stats strong {
+    font-size: 16px;
+    color: #4d5bd5;
+}
+
+
+/* ============================================================
+   REPORT FEATURE CONTRIBUTION
+============================================================ */
+
+.report-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.report-feature-grid > div {
+    padding: 16px;
+    border-radius: 12px;
+    background: #f8f9fe;
+}
+
+.report-feature-grid span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #68708b;
+}
+
+.report-feature-grid strong {
+    font-size: 20px;
+    color: #4d5bd5;
+}
+
+
+/* ============================================================
+   AI INTERPRETATION
+============================================================ */
+
+.report-interpretation {
+    margin: 0;
+    padding: 18px;
+    border-radius: 12px;
+    background: #f8f9fe;
+    color: #59617d;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ============================================================
+   REPORT ACTIONS
+============================================================ */
+
+.report-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #eceef6;
+}
+
+.report-secondary-button,
+.report-primary-button {
+    min-width: 130px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.report-secondary-button {
+    border: 1px solid #dfe2ef;
+    background: #ffffff;
+    color: #59617d;
+}
+
+.report-secondary-button:hover {
+    background: #f5f6fb;
+}
+
+.report-primary-button {
+    border: 1px solid #4d5bd5;
+    background: #4d5bd5;
+    color: #ffffff;
+}
+
+.report-primary-button:hover {
+    background: #3f4dc4;
+}
+
+
+/* ============================================================
+   REPORT RESPONSIVE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .report-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .report-analysis-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .report-modal {
+        padding: 12px;
+    }
+
+    .report-modal-content {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .report-modal-header h2 {
+        font-size: 21px;
+    }
+
+    .report-overview-grid,
+    .report-analysis-grid,
+    .report-xai-stats,
+    .report-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-section {
+        padding: 16px;
+    }
+
+    .report-actions {
+        flex-direction: column;
+    }
+
+    .report-secondary-button,
+    .report-primary-button {
+        width: 100%;
+    }
+
+}
+/* ============================================================
+   PRINT REPORT — CLEAN DOCUMENT
+============================================================ */
+
+@media print {
+
+    /* Hide the normal application completely */
+    body > * {
+        display: none !important;
+    }
+
+    /* Show only the report modal */
+    body > #reportModal {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        overflow: visible !important;
+    }
+
+    /* Remove modal overlay */
+    #reportModal .report-modal-overlay {
+        display: none !important;
+    }
+
+    /* Convert modal into normal document */
+    #reportModal .report-modal-content {
+        display: block !important;
+        position: static !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 20px 30px !important;
+
+        overflow: visible !important;
+
+        background: white !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Hide screen-only controls */
+    #reportModal .report-close-button,
+    #reportModal .report-actions {
+        display: none !important;
+    }
+
+    /* Header */
+    #reportModal .report-modal-header {
+        display: block !important;
+        margin: 0 0 18px 0 !important;
+        padding: 0 0 15px 0 !important;
+        border-bottom: 1px solid #dfe3eb !important;
+    }
+
+    /* Overview */
+    #reportModal .report-overview-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        margin-bottom: 18px !important;
+    }
+
+    /* Report sections */
+    #reportModal .report-section {
+        display: block !important;
+        width: 100% !important;
+
+        margin-bottom: 18px !important;
+        padding: 18px !important;
+
+        background: white !important;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Summary grid */
+    #reportModal .report-analysis-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    /* Feature contribution */
+    #reportModal .report-feature-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    /* Score-CAM */
+    #reportModal .report-scorecam {
+        width: 100% !important;
+        height: auto !important;
+
+        overflow: visible !important;
+
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    #reportModal .report-scorecam img {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+
+        object-fit: contain !important;
+    }
+
+    /* Score-CAM statistics */
+    #reportModal .report-xai-stats {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 14px !important;
+
+        margin-top: 14px !important;
+    }
+
+    /* Prevent individual items from splitting */
+    #reportModal .report-summary-item,
+    #reportModal .report-analysis-grid > div,
+    #reportModal .report-feature-grid > div,
+    #reportModal .report-xai-stats > div {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Keep headings with their sections */
+    #reportModal h2,
+    #reportModal h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    /* AI interpretation */
+    #reportModal .report-interpretation {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Normal paper layout */
+    html,
+    body {
+        width: 100% !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: white !important;
+    }
+
+    /* Don't show browser URL/header/footer styling where supported */
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+}

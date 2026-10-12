@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VocaTrust | Voice Integrity Assessment</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">V</div>
+            <span>VocaTrust</span>
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            
+            
+
+            
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- Top Header -->
+
+        <header class="top-header">
+
+            <div>
+                <p class="welcome-text">
+                    Welcome back
+                </p>
+
+                <h1>
+                    Voice Integrity Assessment
+                </h1>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar">
+                    U
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section class="dashboard">
+
+
+            <!-- =========================
+                 HERO SECTION
+            ========================== -->
+
+            <div class="hero-section">
+
+                <div class="hero-text">
+
+                    <div class="ai-badge">
+                        ✦ AI Powered Analysis
+                    </div>
+
+                    <h2>
+                        Verify the authenticity
+                        <span>of every voice.</span>
+                    </h2>
+
+                    <p>
+                        Upload an audio recording and let VocaTrust analyze
+                        its voice integrity using advanced deep learning
+                        and explainable AI.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 UPLOAD CARD
+            ========================== -->
+
+            <section class="upload-card">
+
+                <div class="upload-icon">
+                    🎙
+                </div>
+
+                <h3>
+                    Upload Voice Recording
+                </h3>
+
+                <p>
+                    Drag and drop your audio file here,
+                    or browse from your device.
+                </p>
+
+
+                <input
+                    type="file"
+                    id="audioFile"
+                    accept=".wav,.mp3,audio/wav,audio/mpeg"
+                    hidden
+                >
+
+
+                <button
+                    type="button"
+                    class="browse-btn"
+                    id="browseBtn"
+                >
+                    Browse Audio
+                </button>
+
+
+                <span
+                    class="file-info"
+                    id="fileInfo"
+                >
+                    Supported: WAV, MP3
+                </span>
+
+            </section>
+
+
+            <!-- =========================
+                 ANALYZE BUTTON
+            ========================== -->
+
+            <div class="analyze-container">
+
+                <button
+                    type="button"
+                    class="analyze-btn"
+                    id="analyzeBtn"
+                >
+                    Analyze Voice
+                    <span>→</span>
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 ANALYSIS RESULT
+            ========================== -->
+
+            <div
+                class="analysis-result"
+                id="resultCard"
+                style="display: none;"
+            >
+
+
+                <!-- =========================
+                     RESULT HEADER
+                ========================== -->
+
+                <div class="result-header">
+
+                    <div>
+
+                        <p class="result-eyebrow">
+                            VOCATRUST AI ANALYSIS
+                        </p>
+
+                        <h2>
+                            Voice Integrity Analysis
+                        </h2>
+
+                        <p class="result-subtitle">
+                            AI-powered voice authenticity assessment
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="status-badge"
+                        id="riskBadge"
+                    >
+
+                        <span class="status-dot"></span>
+
+                        <span id="riskText">
+                            GENUINE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     RESULT OVERVIEW
+                ========================== -->
+
+                <div class="result-overview">
+
+
+                    <!-- Prediction -->
+
+                    <div class="result-status-card">
+
+                        <div id="predictionIcon" class="result-icon success-icon">
+                            ✓
+                        </div>
+
+                        <div class="result-status-content">
+
+                            <p>
+                                Prediction
+                            </p>
+
+                            <h3 id="predictionText">
+                                --
+                            </h3>
+
+                            <span id="predictionDescription">
+                                Voice classification result
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Voice Integrity Score -->
+
+                    <div class="score-card">
+
+                        <div class="score-circle">
+
+                            <div class="score-circle-inner">
+
+                                <span class="score-label">
+                                    Voice Integrity
+                                </span>
+
+                                <strong id="integrityScore">
+                                    --
+                                </strong>
+
+                                <span class="score-total">
+                                    / 100
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confidence -->
+
+                    <div class="metric-card">
+
+                        <div class="metric-icon">
+                            %
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Confidence
+                            </p>
+
+                            <h3 id="confidenceText">
+                                --%
+                            </h3>
+
+                            <span>
+                                Model confidence
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Risk Level -->
+
+                    <div class="metric-card risk-card">
+
+                        <div class="metric-icon">
+                            !
+                        </div>
+
+                        <div>
+
+                            <p>
+                                Risk Level
+                            </p>
+
+                            <h3 id="riskLevelText">
+                                --
+                            </h3>
+
+                            <span>
+                                Voice authenticity status
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     FILE INFORMATION
+                ========================== -->
+
+                <div class="file-summary">
+
+                    <div class="file-summary-item">
+
+                        <span class="summary-label">
+                            File Name
+                        </span>
+
+                        <strong id="resultFileName">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="file-summary-item">
+
+                        <span class="summary-label">
+                            Analysis Status
+                        </span>
+
+                        <strong class="status-success">
+                            Analysis Complete
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     ANALYSIS GRID
+                ========================== -->
+
+                <div class="analysis-grid">
+
+
+                    <!-- =========================
+                         VOICE ANALYSIS SUMMARY
+                    ========================== -->
+
+                    <div class="summary-card">
+
+                        <div class="card-heading">
+
+                            <div class="card-heading-icon">
+                                ◈
+                            </div>
+
+                            <h3>
+                                Voice Analysis Summary
+                            </h3>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Prediction
+                            </span>
+
+                            <strong id="summaryPrediction">
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong id="summaryConfidence">
+                                --%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Voice Integrity Score
+                            </span>
+
+                            <strong id="summaryIntegrity">
+                                -- / 100
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Risk Level
+                            </span>
+
+                            <strong id="summaryRisk">
+                                --
+                            </strong>
+
+                        </div>
+
+                    </div>
+                    <!-- Voice Integrity Assessment -->
+<div class="integrity-assessment-card">
+
+    <div class="card-heading">
+
+        <div class="card-heading-icon">
+            ◉
+        </div>
+
+        <div>
+            <h3>Voice Integrity Assessment</h3>
+            <p>Overall assessment of the analyzed voice</p>
+        </div>
+
+    </div>
+
+
+    <div class="integrity-score-display">
+
+        <div class="integrity-score-number">
+            <strong id="integrityAssessmentScore">100</strong>
+            <span>/ 100</span>
+        </div>
+
+        <div class="integrity-score-label" id="integrityAssessmentLabel">
+            Very High Integrity
+        </div>
+
+    </div>
+
+
+    <div class="integrity-progress">
+
+        <div
+            class="integrity-progress-fill"
+            id="integrityProgressFill"
+            style="width: 100%;">
+        </div>
+
+    </div>
+
+
+    <p
+        class="integrity-description"
+        id="integrityAssessmentDescription">
+        The analyzed voice shows strong characteristics associated
+        with genuine speech.
+    </p>
+
+</div>
+
+
+                    <!-- =========================
+                         EXPLAINABLE AI SCORE-CAM
+                    ========================== -->
+
+                    <div class="xai-card">
+
+                        <div class="card-heading">
+
+                            <div class="card-heading-icon">
+                                ✦
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Explainable AI — Score-CAM
+                                </h3>
+
+                                <p>
+                                    Model attention visualization
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Score-CAM Visualization -->
+
+                        <div
+                            class="score-cam-visualization"
+                            id="scoreCamVisualization"
+                            style="display: none;"
+                        >
+
+
+                            <!-- Heatmap -->
+
+                            <div class="score-cam-image-container">
+
+                                <img
+                                    id="scoreCamImage"
+                                    class="score-cam-image"
+                                    alt="Score-CAM voice analysis heatmap"
+                                >
+
+                            </div>
+
+
+                            <!-- Heatmap Statistics -->
+
+                            <div class="xai-section-title">
+                                Heatmap Statistics
+                            </div>
+
+
+                            <div class="xai-stat-grid">
+
+
+                                <div class="xai-stat-card">
+
+                                    <span>
+                                        Maximum Importance
+                                    </span>
+
+                                    <strong id="peakImportance">
+                                        --
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="xai-stat-card">
+
+                                    <span>
+                                        Average Importance
+                                    </span>
+
+                                    <strong id="averageImportance">
+                                        --
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="xai-stat-card">
+
+                                    <span>
+                                        Standard Deviation
+                                    </span>
+
+                                    <strong id="stdImportance">
+                                        --
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Feature Contribution -->
+
+                            <div class="xai-section-title">
+                                Feature Contribution to Prediction
+                            </div>
+
+
+                            <div class="feature-contribution-grid">
+
+
+                                <!-- MFCC -->
+
+                                <div class="feature-card">
+
+                                    <div class="feature-card-top">
+
+                                        <span>
+                                            MFCC
+                                        </span>
+
+                                        <strong id="mfccContribution">
+                                            --%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="feature-bar">
+
+                                        <div
+                                            id="mfccBar"
+                                            class="feature-bar-fill mfcc-bar"
+                                            style="width: 0%;"
+                                        ></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Delta -->
+
+                                <div class="feature-card">
+
+                                    <div class="feature-card-top">
+
+                                        <span>
+                                            Delta
+                                        </span>
+
+                                        <strong id="deltaContribution">
+                                            --%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="feature-bar">
+
+                                        <div
+                                            id="deltaBar"
+                                            class="feature-bar-fill delta-bar"
+                                            style="width: 0%;"
+                                        ></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Delta-Delta -->
+
+                                <div class="feature-card">
+
+                                    <div class="feature-card-top">
+
+                                        <span>
+                                            Delta-Delta
+                                        </span>
+
+                                        <strong id="deltaDeltaContribution">
+                                            --%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="feature-bar">
+
+                                        <div
+                                            id="deltaDeltaBar"
+                                            class="feature-bar-fill delta-delta-bar"
+                                            style="width: 0%;"
+                                        ></div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Score-CAM Placeholder -->
+
+                        <div
+                            class="xai-placeholder"
+                            id="scoreCamPlaceholder"
+                        >
+
+                            <div class="xai-placeholder-icon">
+                                ✦
+                            </div>
+
+                            <h4>
+                                Score-CAM Visualization
+                            </h4>
+
+                            <p>
+                                Explainable AI visualization will appear
+                                here after Score-CAM analysis.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     BOTTOM ANALYSIS SECTIONS
+                ========================== -->
+
+                <div class="bottom-analysis-grid">
+
+
+                    <!-- =========================
+                         IMPORTANT TIME REGIONS
+                    ========================== -->
+
+                    <div class="info-card">
+
+                        <div class="card-heading">
+
+                            <div class="card-heading-icon">
+                                ◷
+                            </div>
+
+                            <h3>
+                                Important Time Regions
+                            </h3>
+
+                        </div>
+
+
+                        <div class="important-region-content">
+
+
+                            <div class="important-region-item">
+
+                                <span class="region-label">
+                                    Most Important Frames
+                                </span>
+
+                                <strong id="importantFrames">
+                                    --
+                                </strong>
+
+                            </div>
+
+
+                            <div class="important-region-item">
+
+                                <span class="region-label">
+                                    Dominant Feature
+                                </span>
+
+                                <strong id="dominantFeature">
+                                    --
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         AI INTERPRETATION
+                    ========================== -->
+
+                    <div class="info-card">
+
+                        <div class="card-heading">
+
+                            <div class="card-heading-icon">
+                                ✦
+                            </div>
+
+                            <h3>
+                                AI Interpretation
+                            </h3>
+
+                        </div>
+
+
+                        <p
+                            class="interpretation-text"
+                            id="interpretationText"
+                        >
+                            The AI interpretation will be generated
+                            from the prediction and Score-CAM analysis.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =========================
+                         REPORTS
+                    ========================== -->
+
+                    <div class="info-card report-card">
+
+                        <div class="card-heading">
+
+                            <div class="card-heading-icon">
+                                ▤
+                            </div>
+
+                            <h3>
+                                Reports
+                            </h3>
+
+                        </div>
+
+
+                        <p>
+                            Generate a detailed VocaTrust analysis report
+                            containing prediction, confidence and
+                            explainable AI insights.
+                        </p>
+
+
+                        <button
+    id="viewFullReportButton"
+    class="report-btn"
+    type="button"
+>
+    View Full Report
+</button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+     <!-- =========================
+     FULL REPORT MODAL
+========================== -->
+
+<div
+    id="reportModal"
+    class="report-modal"
+    style="display: none;"
+>
+
+    <div class="report-modal-overlay"></div>
+
+    <div class="report-modal-content">
+
+        <!-- Report Header -->
+
+        <div class="report-modal-header">
+
+            <div>
+                <p class="result-eyebrow">
+                    VOCATRUST AI REPORT
+                </p>
+
+                <h2>
+                    Voice Integrity Analysis Report
+                </h2>
+
+                <p class="result-subtitle">
+                    Detailed analysis of the submitted voice recording
+                </p>
+            </div>
+
+            <button
+                id="closeReportButton"
+                class="report-close-button"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Report Overview -->
+
+        <div class="report-overview-grid">
+
+            <div class="report-summary-item">
+
+                <span>
+                    File Name
+                </span>
+
+                <strong id="reportFileName">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="report-summary-item">
+
+                <span>
+                    Prediction
+                </span>
+
+                <strong id="reportPrediction">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="report-summary-item">
+
+                <span>
+                    Confidence
+                </span>
+
+                <strong id="reportConfidence">
+                    --%
+                </strong>
+
+            </div>
+
+
+            <div class="report-summary-item">
+
+                <span>
+                    Voice Integrity
+                </span>
+
+                <strong id="reportIntegrity">
+                    -- / 100
+                </strong>
+
+            </div>
+
+
+            <div class="report-summary-item">
+
+                <span>
+                    Risk Level
+                </span>
+
+                <strong id="reportRisk">
+                    --
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- Report Analysis -->
+
+        <div class="report-section">
+
+            <h3>
+                Voice Analysis Summary
+            </h3>
+
+            <div class="report-analysis-grid">
+
+                <div>
+                    <span>Prediction</span>
+                    <strong id="reportSummaryPrediction">
+                        --
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Confidence</span>
+                    <strong id="reportSummaryConfidence">
+                        --%
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Voice Integrity Score</span>
+                    <strong id="reportSummaryIntegrity">
+                        -- / 100
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Risk Level</span>
+                    <strong id="reportSummaryRisk">
+                        --
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Score-CAM -->
+
+        <div class="report-section">
+
+            <h3>
+                Explainable AI — Score-CAM
+            </h3>
+
+            <div class="report-scorecam">
+
+                <img
+                    id="reportScoreCamImage"
+                    alt="Score-CAM voice analysis heatmap"
+                >
+
+            </div>
+
+
+            <div class="report-xai-stats">
+
+                <div>
+                    <span>Maximum Importance</span>
+                    <strong id="reportPeakImportance">
+                        --
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Average Importance</span>
+                    <strong id="reportAverageImportance">
+                        --
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Standard Deviation</span>
+                    <strong id="reportStdImportance">
+                        --
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Feature Contribution -->
+
+        <div class="report-section">
+
+            <h3>
+                Feature Contribution to Prediction
+            </h3>
+
+            <div class="report-feature-grid">
+
+                <div>
+                    <span>MFCC</span>
+                    <strong id="reportMfccContribution">
+                        --%
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Delta</span>
+                    <strong id="reportDeltaContribution">
+                        --%
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Delta-Delta</span>
+                    <strong id="reportDeltaDeltaContribution">
+                        --%
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Important Regions -->
+
+        <div class="report-section">
+
+            <h3>
+                Important Time Regions
+            </h3>
+
+            <div class="report-analysis-grid">
+
+                <div>
+                    <span>Most Important Frames</span>
+                    <strong id="reportImportantFrames">
+                        --
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Dominant Feature</span>
+                    <strong id="reportDominantFeature">
+                        --
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI Interpretation -->
+
+        <div class="report-section">
+
+            <h3>
+                AI Interpretation
+            </h3>
+
+            <p
+                id="reportInterpretation"
+                class="report-interpretation"
+            >
+                --
+            </p>
+
+        </div>
+
+
+        <!-- Report Actions -->
+
+        <div class="report-actions">
+
+            <button
+                id="closeReportButtonBottom"
+                class="report-secondary-button"
+                type="button"
+            >
+                Close
+            </button>
+
+            <button
+                id="printReportButton"
+                class="report-primary-button"
+                type="button"
+            >
+                Print Report
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
